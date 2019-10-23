@@ -67,6 +67,192 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-39最大相连数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/" class="article-date">
+  <time datetime="2019-10-23T09:33:25.584Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/">39最大相连数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="39最大相连数"><a href="#39最大相连数" class="headerlink" title="39最大相连数"></a>39最大相连数</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。<br>例如，数组<code>[0,1,1,1,0,1,1,0]</code>中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>在本题中，按照一般思路，我们可以遍历找出每一段1的<strong>起点下标start</strong>和<strong>终点下标end</strong>，然后设置<code>max</code>变量用于保存<code>end - start</code>的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方便，所以较为复杂。<strong>请学有余力的同学自行思考如何实现。</strong></p>
+<p><strong>简易思路</strong>：设置一个变量<code>length</code>用以表示<strong>到目前遇到了多少个连续的1</strong>，显然其初始值应该为0，在遍历数组时遵循以下逻辑</p>
+<ul>
+<li><p>如果遇到1，length值加一</p>
+</li>
+<li><p>如果遇到0，则length值清零</p>
+</li>
+</ul>
+<p>显然，<code>length</code>的值在每次遍历时都在变化，因此我们同样需要一个<code>max</code>变量用于保存<code>length</code>的最大值。在<code>length</code>每次变化后，都需要对比<code>max</code>中的值，如果<code>length</code>大于<code>max</code>我们就将max的值更新为<code>length</code>。（此处的思路类似于寻找最大值）</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;<span class="comment">//size表示数组的长度</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;</span><br><span class="line">    <span class="keyword">int</span> arr[size];<span class="comment">//声明长度为size的数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];<span class="comment">//循环输入数组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照上述思路，遍历数组</span></span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;<span class="comment">//请思考此处max为什么为0</span></span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == <span class="number">1</span>)&#123;</span><br><span class="line">            length++;<span class="comment">//如果遇到1，length值加一</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            length = <span class="number">0</span>;<span class="comment">//如果遇到0，则length值清零</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//在length每次变化后，都需要对比更新max中的值</span></span><br><span class="line">        <span class="keyword">if</span>(max &lt; length)&#123;</span><br><span class="line">            max = length;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历结束</span></span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/" data-id="ck232ysjr0001moutchn21v1k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-296拔河比赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/296%E6%8B%94%E6%B2%B3%E6%AF%94%E8%B5%9B/" class="article-date">
+  <time datetime="2019-10-23T09:33:25.558Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/23/296%E6%8B%94%E6%B2%B3%E6%AF%94%E8%B5%9B/">296拔河比赛</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="296拔河比赛"><a href="#296拔河比赛" class="headerlink" title="296拔河比赛"></a>296拔河比赛</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>这道题是应用题，题目给出现实中的一个问题，然后要求我们用代码来解决问题。本题给出的解决方法相对普通的代码题有一些复杂，但只要遵从题意的逻辑去判断即可。</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>用两个数组分别保存A，B班级的数据，然后按顺序依照题目给的四个逻辑去判断即可。请参阅代码中的注释。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> a_size, b_size;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a_size &gt;&gt; b_size;<span class="comment">//输入两个班的人数</span></span><br><span class="line">    <span class="keyword">int</span> a[a_size], b[b_size];<span class="comment">//这两个数组用来保存两个班的人的体重</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a_size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b_size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按题目要求的顺序判断</span></span><br><span class="line">    <span class="comment">//1.一个班的同学总体重越大，那个班就越可能赢。</span></span><br><span class="line">    <span class="keyword">int</span> sum_a = <span class="number">0</span>, sum_b = <span class="number">0</span>;<span class="comment">//表示总体重，注意初始化为0</span></span><br><span class="line">    <span class="comment">//循环求和</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a_size; i++)&#123;</span><br><span class="line">        sum_a += a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b_size; i++)&#123;</span><br><span class="line">        sum_b += b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断，如果符合这两个条件，则结果已经明确，输出后结束程序。</span></span><br><span class="line">    <span class="keyword">if</span>(sum_a &gt; sum_b)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'A'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum_a &lt; sum_b)&#123;  <span class="comment">//思考：这里能不能用else？为什么？</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'B'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果程序可以继续运行到这里，则说明1中的判断无法得到结果</span></span><br><span class="line">    <span class="comment">//继续进行判断2.如果两个班的同学总体重一样大，人数少的那个班更可能赢。</span></span><br><span class="line">    <span class="keyword">if</span>(a_size &lt; b_size)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'A'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(a_size &gt; b_size)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">'B'</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果程序可以继续运行到这里，则说明2中的判断也无法得到结果</span></span><br><span class="line">    <span class="comment">//继续进行判断3.如果两个班的同学总体重一样大，人数也一样，</span></span><br><span class="line">    <span class="comment">//拔河时站在最后的那个同学体重越大就越可能赢。如果最后一个同学体重一样，</span></span><br><span class="line">    <span class="comment">//就比较倒数第二个；如果倒数第二个同学体重也一样，就比较倒数第三个...</span></span><br><span class="line">    <span class="comment">//以此类推，直到比出胜负为止。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = a_size - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;<span class="comment">//注意此处的循环条件，这里倒序遍历数组（为什么？）</span></span><br><span class="line">        <span class="keyword">if</span>(a[i] &gt; b[i])&#123;    <span class="comment">//假如a的对应位置体重大于b，则说明a更可能赢</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'A'</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a[i] &lt; b[i])&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'B'</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果A和B有对应位置同学体重不同，则上面的循环一定可以找出来，并输出结果，结束程序</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//因此，如果程序运行到这里还没有结束，说明两个班没有区别</span></span><br><span class="line">    <span class="comment">//输出no，结束程序</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"no"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/23/296%E6%8B%94%E6%B2%B3%E6%AF%94%E8%B5%9B/" data-id="ck232ysjt0002moutfnrrf6ga" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-194 校门外的树" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/194%20%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/" class="article-date">
+  <time datetime="2019-10-23T09:33:25.520Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/23/194%20%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/">194 校门外的树</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="194-校门外的树"><a href="#194-校门外的树" class="headerlink" title="194 校门外的树"></a>194 校门外的树</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>这道题也是一道应用题，题目较长，需要各位同学认真读题。</p>
+<p>题目给的输入中</p>
+<ul>
+<li><p>第一个数字<code>L</code>是<strong>路的长度</strong>。但需要注意，<strong>每个整数点上都种有一棵树</strong>。也就是<code>0、1、2…、L</code>，<strong>共有<code>L+1</code>棵树</strong>。</p>
+</li>
+<li><p>第二个数字<code>M</code>是<strong>需要砍树的区域的个数</strong>，每个区域都有一个<strong>起点</strong>和一个<strong>终点</strong>。</p>
+</li>
+<li><p>剩余<code>M</code>行，每行两个数字，表示对应区域的<strong>起点</strong>及<strong>终点</strong>。</p>
+</li>
+</ul>
+<p>题目要求我们计算砍完对应区域树后，剩余的树的数量。</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>如果砍树区域不会重合，那么我们只需要将每个区域砍的树计算出来，用树的总数作差即可得到结果。但题目说明了<strong>区域之间有重合的情况</strong> ，因此这种方法不再适用。</p>
+<p>我们学习过数组之后，可以用一个长度为<code>L+1</code>的数组（其下标正好符合题目要求，从0开始到L结束）来<strong>表示每个位置上的树是否存在</strong>。我将这个数组命名为trees。例如，如果某个坑的树存在，数组上对应位置的数字就设置为1；相反，若是不存在，则设置为0。显然，在最初，每个坑里的树都是存在的，因此我们需要将<strong>trees数组的初始值全部设置为1</strong>。</p>
+<p>题目还输入了各砍树区域的起点和终点，我们需要合适的结构来存储这些数据。因为我们只学习过数组，因此这里可以使<strong>用两个数组分别表示起点和终点</strong>，我将它们命名为starts[]和ends[]。容易知道，这两个数组的长度均为M。这两个数组的<strong>输入部分</strong>需要注意，因为它们是<strong>交替输入</strong>的（先输入某段的起点，再输入某段的终点），并非输入完所有起点再输入所有终点。</p>
+<p>输入部分处理结束后，我们遍历这些起点和终点，将trees[]在这些区域上的数字<strong>设置为0（代表树已经被砍掉了）</strong>，当所有起点终点全部遍历过后，trees[]就是最终剩下树木的情况。</p>
+<p>至此，我们只需遍历trees[]并统计1的数量即可得到结果。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> L,M;<span class="comment">//L为路长，M为区域数量</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; L &gt;&gt; M;</span><br><span class="line">    <span class="keyword">int</span> starts[M], ends[M];</span><br><span class="line">    <span class="comment">//注意这里的起点和终点的输入方式</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)&#123;</span><br><span class="line">        <span class="comment">//输入第i个区域的起点和终点，到starts[i]和ends[i]</span></span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; starts[i] &gt;&gt; ends[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理表示树木情况的trees[]</span></span><br><span class="line">    <span class="keyword">int</span> trees[L+<span class="number">1</span>];<span class="comment">//声明表示树情况的数组，注意树的数量是L+1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; L + <span class="number">1</span>; i++)&#123;<span class="comment">//用循环初始化为1</span></span><br><span class="line">        trees[i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始遍历砍树的区域（共有多少个区域？）</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)&#123;</span><br><span class="line">        <span class="comment">//下面处理第i个区域</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = starts[i]; k &lt;= ends[i]; k++)&#123; <span class="comment">//注意理解这个循环在做的事情！</span></span><br><span class="line">            <span class="comment">//我们用k这个参数，从第i个区域的起点starts[i]，变化到终点ends[i]</span></span><br><span class="line">            <span class="comment">//因此只要把经过的坑全部设置为0即可</span></span><br><span class="line">            trees[k] = <span class="number">0</span>;<span class="comment">//砍掉k位置上的树</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//上面这个内层循环结束后，第i个区域的树就砍完了</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这个双重循环结束后，所有的树都砍完了，此时trees[]已经可以表示剩余树木的情况</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//求出trees[]中还剩多少树</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; L + <span class="number">1</span>; i++)&#123;<span class="comment">//注意数组长度是L+1</span></span><br><span class="line">        sum += trees[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//循环结束，sum中已经是树的数量，输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; sum;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/23/194%20%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/" data-id="ck232ysji0000moutfmx7bhz3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-40分离0与非0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/" class="article-date">
+  <time datetime="2019-10-23T09:33:25.500Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">40分离0与非0</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="40分离0与非0"><a href="#40分离0与非0" class="headerlink" title="40分离0与非0"></a>40分离0与非0</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>在一个数组中有两个部分：0 和 其他非零的数。题目要求将非零的部分移动到前面，0放在数组的最后。</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>这道题有很多思路可以实现，这里介绍相对简单的一种。</p>
+<p>以题目的样例输入为例，<code>[0,1,2,3,4,0]</code>这样的数组，需要将所有的非零数放到开头。声明一个新的用于保存结果的数组，将其初始化为0，长度与原数组相同。遍历原数组，当遇到非零数，就放到新数组的<strong>对应位置</strong>。</p>
+<p><strong>如何寻找正确的对应位置？</strong>请注意代码中的变量<code>index_of_b</code>的变化过程，它表示<strong>即将填入数字的位置</strong>。声明的时候其值为0，因为我们要从第一个位置开始填。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">40分离0与非0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;<span class="comment">//输入数组长度</span></span><br><span class="line">    <span class="keyword">int</span> a[size];<span class="comment">//声明a数组，用于保存输入</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> b[size] = &#123;&#125;;<span class="comment">//声明长度为size的数组，其初始值为0</span></span><br><span class="line">    <span class="comment">//这个b数组用于保存转换后的结果</span></span><br><span class="line">    <span class="keyword">int</span> index_of_b = <span class="number">0</span>;<span class="comment">//这个变量表示即将填入数字的位置</span></span><br><span class="line">    <span class="comment">//遍历a数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//假如a[i]不为0，则将其放入b数组对应位置</span></span><br><span class="line">            b[index_of_b] = a[i];<span class="comment">//现在index_of_b这个位置已经填入数字了</span></span><br><span class="line">            <span class="comment">//因此需要更新index_of_b</span></span><br><span class="line">            index_of_b++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//a数组遍历结束后，b已经是我们需要的结果了。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历b数组，输出结果。注意数字之间需要用空格隔开</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; b[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/" data-id="ck232ysk80004moutdb8ffka6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/23/hello-world/" class="article-date">
@@ -106,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/23/hello-world/" data-id="ck232luml000098utgif7571m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/23/hello-world/" data-id="ck232ysju0003moutb0grduqm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,6 +331,22 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/">39最大相连数</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/23/296%E6%8B%94%E6%B2%B3%E6%AF%94%E8%B5%9B/">296拔河比赛</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/23/194%20%E6%A0%A1%E9%97%A8%E5%A4%96%E7%9A%84%E6%A0%91/">194 校门外的树</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">40分离0与非0</a>
+          </li>
         
           <li>
             <a href="/2019/10/23/hello-world/">Hello World</a>
