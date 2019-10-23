@@ -55,16 +55,16 @@
   };
 </script>
 
-  <meta name="description" content="39最大相连数题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。 思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标">
+  <meta name="description" content="#44 最后单词的长度  题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思">
 <meta property="og:type" content="article">
-<meta property="og:title" content="39最大相连数">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0&#x2F;index.html">
+<meta property="og:title" content="44 最后单词的长度">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="39最大相连数题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。 思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标">
+<meta property="og:description" content="#44 最后单词的长度  题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T09:33:25.585Z">
+<meta property="og:updated_time" content="2019-10-23T12:29:21.627Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/23/44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">
 
 
 <script id="page-configurations">
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title>39最大相连数 | 101题解</title>
+  <title>44 最后单词的长度 | 101题解</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/39%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YH">
@@ -215,7 +215,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            39最大相连数
+            44 最后单词的长度
             
 
           
@@ -232,7 +232,7 @@
                 
               
 
-              <time title="创建时间：2019-10-23 17:33:25" itemprop="dateCreated datePublished" datetime="2019-10-23T17:33:25+08:00">2019-10-23</time>
+              <time title="创建时间：2019-10-23 20:29:21" itemprop="dateCreated datePublished" datetime="2019-10-23T20:29:21+08:00">2019-10-23</time>
             </span>
           
 
@@ -247,17 +247,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="39最大相连数"><a href="#39最大相连数" class="headerlink" title="39最大相连数"></a>39最大相连数</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。<br>例如，数组<code>[0,1,1,1,0,1,1,0]</code>中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。</p>
-<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>在本题中，按照一般思路，我们可以遍历找出每一段1的<strong>起点下标start</strong>和<strong>终点下标end</strong>，然后设置<code>max</code>变量用于保存<code>end - start</code>的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方便，所以较为复杂。<strong>请学有余力的同学自行思考如何实现。</strong></p>
-<p><strong>简易思路</strong>：设置一个变量<code>length</code>用以表示<strong>到目前遇到了多少个连续的1</strong>，显然其初始值应该为0，在遍历数组时遵循以下逻辑</p>
-<ul>
-<li><p>如果遇到1，length值加一</p>
-</li>
-<li><p>如果遇到0，则length值清零</p>
-</li>
-</ul>
-<p>显然，<code>length</code>的值在每次遍历时都在变化，因此我们同样需要一个<code>max</code>变量用于保存<code>length</code>的最大值。在<code>length</code>每次变化后，都需要对比<code>max</code>中的值，如果<code>length</code>大于<code>max</code>我们就将max的值更新为<code>length</code>。（此处的思路类似于寻找最大值）</p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;<span class="comment">//size表示数组的长度</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;</span><br><span class="line">    <span class="keyword">int</span> arr[size];<span class="comment">//声明长度为size的数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];<span class="comment">//循环输入数组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照上述思路，遍历数组</span></span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;<span class="comment">//请思考此处max为什么为0</span></span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == <span class="number">1</span>)&#123;</span><br><span class="line">            length++;<span class="comment">//如果遇到1，length值加一</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            length = <span class="number">0</span>;<span class="comment">//如果遇到0，则length值清零</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//在length每次变化后，都需要对比更新max中的值</span></span><br><span class="line">        <span class="keyword">if</span>(max &lt; length)&#123;</span><br><span class="line">            max = length;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历结束</span></span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>#44 最后单词的长度 </p>
+<h3 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h3><p>题目输入一个<strong>可能包含空格</strong>的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。</p>
+<h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>这里介绍两种思路：</p>
+<h5 id="思路一：找最后一个空格"><a href="#思路一：找最后一个空格" class="headerlink" title="思路一：找最后一个空格"></a>思路一：找最后一个空格</h5><p>我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标<code>index</code>，再使用字符串的长度<code>str.size()</code>减去<code>index</code><strong>再减1</strong>（为什么要再减1？），即可得到最后一个单词的长度。这种思路有一个问题需要考虑：如果字符串中不存在空格，那应该如何得到单词的长度？（很显然，此时整个字符串的长度就是单词的长度，我们可以将<code>index</code>的初始值设置为<code>-1</code>，这样一来<code>str.size() - index - 1</code>就正好得到字符串的长度）。这种方法实现起来不难，请有时间的同学自行实现。</p>
+<h5 id="思路二：用循环倒序遍历字符串"><a href="#思路二：用循环倒序遍历字符串" class="headerlink" title="思路二：用循环倒序遍历字符串"></a>思路二：用循环倒序遍历字符串</h5><p>我们从最后一个字母开始遍历字符串，每遇到一个字母，就给<code>count</code>变量加一。直到遇到空格，就把循环<code>break</code>掉。这种思路下，就算字符串中没有空格，也会因为循环正常结束，而统计出正确的答案。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>下面给出方法二的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">    getline(<span class="built_in">cin</span>, str);<span class="comment">//注意，只有这样才能输入带空格字符串</span></span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//count用于记录遍历经过了几个字母</span></span><br><span class="line">    <span class="comment">//倒序遍历字符串，请注意循环三要素的内容</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = str.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="comment">//判断到空格，就break当前循环。注意判断空格的方法</span></span><br><span class="line">        <span class="keyword">if</span>(str[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; count;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -277,8 +273,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/23/296%E6%8B%94%E6%B2%B3%E6%AF%94%E8%B5%9B/" rel="next" title="296拔河比赛">
-                  <i class="fa fa-chevron-left"></i> 296拔河比赛
+                <a href="/2019/10/23/302%E7%8C%9C%E6%8B%B3/" rel="next" title="302猜拳">
+                  <i class="fa fa-chevron-left"></i> 302猜拳
                 </a>
               
             </div>
@@ -286,10 +282,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/23/302%E7%8C%9C%E6%8B%B3/" rel="prev" title="302猜拳">
-                  302猜拳 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -335,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#39最大相连数"><span class="nav-number">1.</span> <span class="nav-text">39最大相连数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题意说明"><span class="nav-number">1.1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路分析"><span class="nav-number">1.2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#思路一：找最后一个空格"><span class="nav-number">2.0.1.</span> <span class="nav-text">思路一：找最后一个空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路二：用循环倒序遍历字符串"><span class="nav-number">2.0.2.</span> <span class="nav-text">思路二：用循环倒序遍历字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->

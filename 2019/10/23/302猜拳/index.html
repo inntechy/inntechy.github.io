@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="101题解">
 <meta property="og:description" content="302猜拳题意说明 两个同学用电脑猜拳，1代表剪刀，2代表石头，3代表布。两人按固定的套路出拳，因此他们每次的出拳是可以确定的。 题目提供的输入如下：  第一行 整数N：两人总共猜拳的次数 整数LengthA：A同学套路的长度 整数LengthB：B同学套路的长度   第二行：长度为LengthA，内容为A同学的套路 第三行：长度为LengthB，内容为B同学的套路  题目要求我们输出A、B获胜的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T11:50:38.225Z">
+<meta property="og:updated_time" content="2019-10-23T11:54:56.877Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/23/302%E7%8C%9C%E6%8B%B3/">
 
@@ -232,8 +232,12 @@
                 
               
 
-              <time title="创建时间：2019-10-23 19:50:38" itemprop="dateCreated datePublished" datetime="2019-10-23T19:50:38+08:00">2019-10-23</time>
+              <time title="创建时间：2019-10-23 19:50:38 / 修改时间：19:54:56" itemprop="dateCreated datePublished" datetime="2019-10-23T19:50:38+08:00">2019-10-23</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -261,7 +265,8 @@
 </ul>
 <p>题目要求我们输出A、B获胜的次数</p>
 <h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>这道题需要我们模拟两人猜拳的过程（显然，猜拳N次，要用到次数为N的循环）。重点在于，如何获取两人在第i次猜拳中的出拳。</p>
-<p>这里先思考一个数学问题，如果今天是星期一，那么请问100天后是星期几？相信大家很快就可以想到思路：<code>100 ÷ 7 = 14 ... 2</code>也就是100天后正好过了14个礼拜多两天，因此100天后是星期三。<br>在这道编程题中，我们可以借鉴这种思路，从而知道第i次猜拳双方各出什么拳。假设i从0开始，使用数组储存的两个套路<code>A[LengthA]</code>和<code>B[LengthB]</code>表示双方的出拳模式。这样，<code>i = 0</code>时，A同学出拳为<code>A[0]</code>，B同学出拳为<code>B[0]</code>。所以，当i为一个不确定的数字时，A同学出拳就是<code>A[i % LengthA]</code>，即套路中，序号为<code>i % LengthA</code>的那个。B同学同理，为<code>B[i % LengthB]</code>。</p>
+<p>这里先思考一个数学问题，如果今天是星期一，那么请问100天后是星期几？相信大家很快就可以想到思路：<code>100 ÷ 7 = 14 ... 2</code>也就是100天后正好过了14个礼拜多两天，因此100天后是星期三。</p>
+<p>在这道编程题中，我们可以借鉴这种思路，从而知道第i次猜拳双方各出什么拳。假设i从0开始，使用数组储存的两个套路<code>A[LengthA]</code>和<code>B[LengthB]</code>表示双方的出拳模式。这样，<code>i = 0</code>时，A同学出拳为<code>A[0]</code>，B同学出拳为<code>B[0]</code>。所以，当i为一个不确定的数字时，A同学出拳就是<code>A[i % LengthA]</code>，即套路中，序号为<code>i % LengthA</code>的那个。B同学同理，为<code>B[i % LengthB]</code>。</p>
 <p>通过这个思路，我们就知道上述的次数为N的循环中，每一次循环过程里双方的出拳了。这样，最后的工作只需要统计双方获胜的次数，这里用if判断即可，不再赘述。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//输入部分</span></span><br><span class="line">	<span class="comment">//第一行</span></span><br><span class="line">	<span class="keyword">int</span> N,lengthA,lengthB;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;N&gt;&gt;lengthA&gt;&gt;lengthB;</span><br><span class="line">	<span class="keyword">int</span> A[lengthA], B[lengthB];</span><br><span class="line">	<span class="keyword">int</span> Awin = <span class="number">0</span>, Bwin = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//第二行</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lengthA;i++) &#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;A[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//第三行</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lengthB;i++) &#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;B[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输入部分结束</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//循环模拟猜拳的过程</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++)&#123;</span><br><span class="line">		<span class="comment">//若A出拳为1，即剪刀，B出拳为2，即石头。后面几个if同理，解释省略</span></span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">1</span> &amp;&amp; B[i%lengthB] == <span class="number">2</span>)&#123;</span><br><span class="line">			<span class="comment">//则B获胜，Bwin+1</span></span><br><span class="line">			Bwin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">1</span> &amp;&amp; B[i%lengthB] == <span class="number">3</span>)&#123;</span><br><span class="line">			Awin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">2</span> &amp;&amp; B[i%lengthB] == <span class="number">1</span>)&#123;</span><br><span class="line">			Awin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">2</span> &amp;&amp; B[i%lengthB] == <span class="number">3</span>)&#123;</span><br><span class="line">			Bwin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">3</span> &amp;&amp; B[i%lengthB] == <span class="number">1</span>)&#123;</span><br><span class="line">			Bwin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(A[i%lengthA] == <span class="number">3</span> &amp;&amp; B[i%lengthB] == <span class="number">2</span>)&#123;</span><br><span class="line">			Awin++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//输出结果</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;Awin&lt;&lt;<span class="string">" "</span>&lt;&lt;Bwin;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
@@ -288,6 +293,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/23/44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/" rel="prev" title="44 最后单词的长度">
+                  44 最后单词的长度 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -349,7 +358,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
