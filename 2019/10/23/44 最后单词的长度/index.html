@@ -55,14 +55,14 @@
   };
 </script>
 
-  <meta name="description" content="#44 最后单词的长度  题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思">
+  <meta name="description" content="44 最后单词的长度题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思路有一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="44 最后单词的长度">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="#44 最后单词的长度  题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思">
+<meta property="og:description" content="44 最后单词的长度题意说明题目输入一个可能包含空格的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。 思路分析这里介绍两种思路： 思路一：找最后一个空格我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标index，再使用字符串的长度str.size()减去index再减1（为什么要再减1？），即可得到最后一个单词的长度。这种思路有一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T12:29:21.627Z">
+<meta property="og:updated_time" content="2019-10-23T12:55:24.966Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/23/44%20%E6%9C%80%E5%90%8E%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">
 
@@ -232,8 +232,12 @@
                 
               
 
-              <time title="创建时间：2019-10-23 20:29:21" itemprop="dateCreated datePublished" datetime="2019-10-23T20:29:21+08:00">2019-10-23</time>
+              <time title="创建时间：2019-10-23 20:29:21 / 修改时间：20:55:24" itemprop="dateCreated datePublished" datetime="2019-10-23T20:29:21+08:00">2019-10-23</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -247,8 +251,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>#44 最后单词的长度 </p>
-<h3 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h3><p>题目输入一个<strong>可能包含空格</strong>的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。</p>
+        <h1 id="44-最后单词的长度"><a href="#44-最后单词的长度" class="headerlink" title="44 最后单词的长度"></a>44 最后单词的长度</h1><h3 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h3><p>题目输入一个<strong>可能包含空格</strong>的字符串（当且仅当字符串中只有一个单词时，不包含空格）。要求我们找出最后一个单词的长度并输出。</p>
 <h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>这里介绍两种思路：</p>
 <h5 id="思路一：找最后一个空格"><a href="#思路一：找最后一个空格" class="headerlink" title="思路一：找最后一个空格"></a>思路一：找最后一个空格</h5><p>我们知道，字符串是具有数组的功能的，因此我们只要找出最后一个空格的下标<code>index</code>，再使用字符串的长度<code>str.size()</code>减去<code>index</code><strong>再减1</strong>（为什么要再减1？），即可得到最后一个单词的长度。这种思路有一个问题需要考虑：如果字符串中不存在空格，那应该如何得到单词的长度？（很显然，此时整个字符串的长度就是单词的长度，我们可以将<code>index</code>的初始值设置为<code>-1</code>，这样一来<code>str.size() - index - 1</code>就正好得到字符串的长度）。这种方法实现起来不难，请有时间的同学自行实现。</p>
 <h5 id="思路二：用循环倒序遍历字符串"><a href="#思路二：用循环倒序遍历字符串" class="headerlink" title="思路二：用循环倒序遍历字符串"></a>思路二：用循环倒序遍历字符串</h5><p>我们从最后一个字母开始遍历字符串，每遇到一个字母，就给<code>count</code>变量加一。直到遇到空格，就把循环<code>break</code>掉。这种思路下，就算字符串中没有空格，也会因为循环正常结束，而统计出正确的答案。</p>
@@ -282,6 +285,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/27/81%20%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2/" rel="prev" title="81 杨辉三角形">
+                  81 杨辉三角形 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -327,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#思路一：找最后一个空格"><span class="nav-number">2.0.1.</span> <span class="nav-text">思路一：找最后一个空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路二：用循环倒序遍历字符串"><span class="nav-number">2.0.2.</span> <span class="nav-text">思路二：用循环倒序遍历字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#44-最后单词的长度"><span class="nav-number">1.</span> <span class="nav-text">44 最后单词的长度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题意说明"><span class="nav-number">1.0.1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路分析"><span class="nav-number">1.0.2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#思路一：找最后一个空格"><span class="nav-number">1.0.2.0.1.</span> <span class="nav-text">思路一：找最后一个空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#思路二：用循环倒序遍历字符串"><span class="nav-number">1.0.2.0.2.</span> <span class="nav-text">思路二：用循环倒序遍历字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.0.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -343,7 +350,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
