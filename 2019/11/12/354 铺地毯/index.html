@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.2">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.2',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -55,15 +55,15 @@
   };
 </script>
 
-  <meta name="description" content="354 铺地毯题意说明题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标(a,b)，长g，宽k. 最后题目问我们，特定的点(x,y)上，最上层的地毯是第几块。（没有地毯输出-1） 思路分析思路1：二维数组模拟很容易想到，用一个二维数组来模拟整块空地。这块空地初始值都是-1（没有地毯），然后我们遍历输入，将第i块地毯覆盖的在二维数组上的区域，其值修改成i。这样，遍历结">
+  <meta name="description" content="题意说明题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标(a,b)，长g，宽k.最后题目问我们，特定的点(x,y)上，最上层的地毯是第几块。（没有地毯输出-1）思路分析">
 <meta name="keywords" content="数信班基础习题,题库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="354 铺地毯">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;354%20%E9%93%BA%E5%9C%B0%E6%AF%AF&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="354 铺地毯题意说明题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标(a,b)，长g，宽k. 最后题目问我们，特定的点(x,y)上，最上层的地毯是第几块。（没有地毯输出-1） 思路分析思路1：二维数组模拟很容易想到，用一个二维数组来模拟整块空地。这块空地初始值都是-1（没有地毯），然后我们遍历输入，将第i块地毯覆盖的在二维数组上的区域，其值修改成i。这样，遍历结">
+<meta property="og:description" content="题意说明题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标(a,b)，长g，宽k.最后题目问我们，特定的点(x,y)上，最上层的地毯是第几块。（没有地毯输出-1）思路分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T09:14:40.766Z">
+<meta property="og:updated_time" content="2019-11-12T09:39:47.334Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/11/12/354%20%E9%93%BA%E5%9C%B0%E6%AF%AF/">
 
@@ -204,8 +204,6 @@
     
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -220,6 +218,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div class="content">
             
 
@@ -259,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-11-12 16:04:46 / 修改时间：17:14:40" itemprop="dateCreated datePublished" datetime="2019-11-12T16:04:46+08:00">2019-11-12</time>
+              <time title="创建时间：2019-11-12 16:04:46 / 修改时间：17:39:47" itemprop="dateCreated datePublished" datetime="2019-11-12T16:04:46+08:00">2019-11-12</time>
             </span>
           
             
@@ -285,6 +285,27 @@
           
 
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.8k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>5 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -295,9 +316,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="354-铺地毯"><a href="#354-铺地毯" class="headerlink" title="354 铺地毯"></a>354 铺地毯</h1><h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标<code>(a,b)</code>，长g，宽k.</p>
-<p>最后题目问我们，特定的点<code>(x,y)</code>上，最上层的地毯是第几块。（没有地毯输出-1）</p>
-<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><h3 id="思路1：二维数组模拟"><a href="#思路1：二维数组模拟" class="headerlink" title="思路1：二维数组模拟"></a>思路1：二维数组模拟</h3><p>很容易想到，用一个二维数组来模拟整块空地。这块空地初始值都是-1（没有地毯），然后我们遍历输入，将第<code>i</code>块地毯覆盖的在二维数组上的区域，其值修改成<code>i</code>。这样，遍历结束后，只需要直接输出<code>map[x][y]</code>即可。</p>
+        <h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标<code>(a,b)</code>，长g，宽k.</p><p>最后题目问我们，特定的点<code>(x,y)</code>上，最上层的地毯是第几块。（没有地毯输出-1）</p><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><a id="more"></a>
+
+<h3 id="思路1：二维数组模拟"><a href="#思路1：二维数组模拟" class="headerlink" title="思路1：二维数组模拟"></a>思路1：二维数组模拟</h3><p>很容易想到，用一个二维数组来模拟整块空地。这块空地初始值都是-1（没有地毯），然后我们遍历输入，将第<code>i</code>块地毯覆盖的在二维数组上的区域，其值修改成<code>i</code>。这样，遍历结束后，只需要直接输出<code>map[x][y]</code>即可。</p>
 <p>这个思路下需要考虑几个问题：</p>
 <ul>
 <li>对于题目提供的数据范围，遍历修改二维数组上的值，其时间消耗是不可接受的。我们虽然可以用这种思路做这道题，但拿不到满分：因为会超出时间限制。</li>
@@ -397,7 +418,7 @@ b\leq y\leq b+k
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#354-铺地毯"><span class="nav-number">1.</span> <span class="nav-text">354 铺地毯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">1.2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路1：二维数组模拟"><span class="nav-number">1.2.1.</span> <span class="nav-text">思路1：二维数组模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路2：遍历地毯"><span class="nav-number">1.2.2.</span> <span class="nav-text">思路2：遍历地毯</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路1：二维数组模拟"><span class="nav-number">2.1.</span> <span class="nav-text">思路1：二维数组模拟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路2：遍历地毯"><span class="nav-number">2.2.</span> <span class="nav-text">思路2：遍历地毯</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -470,13 +491,21 @@ b\leq y\leq b+k
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YH</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">13k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">
-      
-    主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.2
   </div>
 
         
@@ -502,7 +531,8 @@ b\leq y\leq b+k
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
-<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
+
 <script src="/js/next-boot.js?v=7.4.2"></script>
 
 

@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.2">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.2',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -55,15 +55,15 @@
   };
 </script>
 
-  <meta name="description" content="39最大相连数题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。 思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标">
+  <meta name="description" content="题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方">
 <meta name="keywords" content="数信班基础习题,题库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="39 最大相连数">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;39%20%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="39最大相连数题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。 思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标">
+<meta property="og:description" content="题意说明在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。例如，数组[0,1,1,1,0,1,1,0]中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。思路分析在本题中，按照一般思路，我们可以遍历找出每一段1的起点下标start和终点下标end，然后设置max变量用于保存end - start的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T09:14:13.938Z">
+<meta property="og:updated_time" content="2019-11-12T09:39:00.335Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/23/39%20%E6%9C%80%E5%A4%A7%E7%9B%B8%E8%BF%9E%E6%95%B0/">
 
@@ -204,8 +204,6 @@
     
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -220,6 +218,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div class="content">
             
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-12 17:14:13" itemprop="dateModified" datetime="2019-11-12T17:14:13+08:00">2019-11-12</time>
+                <time title="修改时间：2019-11-12 17:39:00" itemprop="dateModified" datetime="2019-11-12T17:39:00+08:00">2019-11-12</time>
               </span>
             
           
@@ -293,6 +293,27 @@
           
 
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>984</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -303,8 +324,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="39最大相连数"><a href="#39最大相连数" class="headerlink" title="39最大相连数"></a>39最大相连数</h3><h4 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h4><p>在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。<br>例如，数组<code>[0,1,1,1,0,1,1,0]</code>中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。</p>
-<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><p>在本题中，按照一般思路，我们可以遍历找出每一段1的<strong>起点下标start</strong>和<strong>终点下标end</strong>，然后设置<code>max</code>变量用于保存<code>end - start</code>的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方便，所以较为复杂。<strong>请学有余力的同学自行思考如何实现。</strong></p>
+        <h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>在一个只有0和1的数组中，找出连续的1最长的部分有多少个1。<br>例如，数组<code>[0,1,1,1,0,1,1,0]</code>中，下标1到下标3这一段是整个数组中连续1最多的部分，因此结果是3。</p><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>在本题中，按照一般思路，我们可以遍历找出每一段1的<strong>起点下标start</strong>和<strong>终点下标end</strong>，然后设置<code>max</code>变量用于保存<code>end - start</code>的最大值，最后输出max即可。这种思路的问题在于，判断起点下标和终点下标不够方便，所以较为复杂。<strong>请学有余力的同学自行思考如何实现。</strong></p><a id="more"></a>
+
 <p><strong>简易思路</strong>：设置一个变量<code>length</code>用以表示<strong>到目前遇到了多少个连续的1</strong>，显然其初始值应该为0，在遍历数组时遵循以下逻辑</p>
 <ul>
 <li><p>如果遇到1，length值加一</p>
@@ -313,7 +334,7 @@
 </li>
 </ul>
 <p>显然，<code>length</code>的值在每次遍历时都在变化，因此我们同样需要一个<code>max</code>变量用于保存<code>length</code>的最大值。在<code>length</code>每次变化后，都需要对比<code>max</code>中的值，如果<code>length</code>大于<code>max</code>我们就将max的值更新为<code>length</code>。（此处的思路类似于寻找最大值）</p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;<span class="comment">//size表示数组的长度</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;</span><br><span class="line">    <span class="keyword">int</span> arr[size];<span class="comment">//声明长度为size的数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];<span class="comment">//循环输入数组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照上述思路，遍历数组</span></span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;<span class="comment">//请思考此处max为什么为0</span></span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == <span class="number">1</span>)&#123;</span><br><span class="line">            length++;<span class="comment">//如果遇到1，length值加一</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            length = <span class="number">0</span>;<span class="comment">//如果遇到0，则length值清零</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//在length每次变化后，都需要对比更新max中的值</span></span><br><span class="line">        <span class="keyword">if</span>(max &lt; length)&#123;</span><br><span class="line">            max = length;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历结束</span></span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;<span class="comment">//size表示数组的长度</span></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;</span><br><span class="line">    <span class="keyword">int</span> arr[size];<span class="comment">//声明长度为size的数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; arr[i];<span class="comment">//循环输入数组</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照上述思路，遍历数组</span></span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;<span class="comment">//请思考此处max为什么为0</span></span><br><span class="line">    <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] == <span class="number">1</span>)&#123;</span><br><span class="line">            length++;<span class="comment">//如果遇到1，length值加一</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            length = <span class="number">0</span>;<span class="comment">//如果遇到0，则length值清零</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//在length每次变化后，都需要对比更新max中的值</span></span><br><span class="line">        <span class="keyword">if</span>(max &lt; length)&#123;</span><br><span class="line">            max = length;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历结束</span></span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -399,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#39最大相连数"><span class="nav-number">1.</span> <span class="nav-text">39最大相连数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题意说明"><span class="nav-number">1.1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路分析"><span class="nav-number">1.2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -472,13 +493,21 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YH</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">13k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">
-      
-    主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.2
   </div>
 
         
@@ -504,7 +533,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
-<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
+
 <script src="/js/next-boot.js?v=7.4.2"></script>
 
 

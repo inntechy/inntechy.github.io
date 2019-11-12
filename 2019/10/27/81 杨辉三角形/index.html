@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" href="/css/main.css?v=7.4.2">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.4.2',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -55,15 +55,15 @@
   };
 </script>
 
-  <meta name="description" content="81 杨辉三角形题意说明杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。 思路分析我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不">
+  <meta name="description" content="题意说明杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。思路分析我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不能忘了判断下标是否">
 <meta name="keywords" content="数信班基础习题,题库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="81 杨辉三角形">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;27&#x2F;81%20%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="81 杨辉三角形题意说明杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。 思路分析我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不">
+<meta property="og:description" content="题意说明杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。思路分析我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不能忘了判断下标是否">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T09:14:24.602Z">
+<meta property="og:updated_time" content="2019-11-12T09:39:31.387Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/10/27/81%20%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%E5%BD%A2/">
 
@@ -204,8 +204,6 @@
     
   </ul>
 
-    
-
 </nav>
 </div>
     </header>
@@ -220,6 +218,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div class="content">
             
 
@@ -270,7 +270,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-12 17:14:24" itemprop="dateModified" datetime="2019-11-12T17:14:24+08:00">2019-11-12</time>
+                <time title="修改时间：2019-11-12 17:39:31" itemprop="dateModified" datetime="2019-11-12T17:39:31+08:00">2019-11-12</time>
               </span>
             
           
@@ -293,6 +293,27 @@
           
 
           
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.1k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>3 分钟</span>
+            </span>
+          
 
         </div>
       </header>
@@ -303,8 +324,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="81-杨辉三角形"><a href="#81-杨辉三角形" class="headerlink" title="81 杨辉三角形"></a>81 杨辉三角形</h1><h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。</p>
-<h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不能忘了判断下标是否满足<code>0~N-1</code>的条件，否则会导致数组越界产生我们不想要的结果。</p>
+        <h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>杨辉三角大家在学习数学的时候可能听说过，题目也解释得很明白了，这里就不再重复了。题意的要求很简单，按照题目要求的格式输出指定层数的杨辉三角。</p><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>我们在计算每一个位置的数字时候，需要用到上一行对应位置的两个值，因此比较合理和方便的方式是使用一个二维数组储存整个杨辉三角，并且由上往下依次计算每个位置的值。需要注意的是，在加“上方”和“左上方”这两个位置的数字的时候，一定不能忘了判断下标是否满足<code>0~N-1</code>的条件，否则会导致数组越界产生我们不想要的结果。</p><a id="more"></a>
+
 <p><strong>注意</strong>：</p>
 <ul>
 <li><p>下面的代码实现没有考虑越界，为什么可以不考虑？</p>
@@ -399,7 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#81-杨辉三角形"><span class="nav-number">1.</span> <span class="nav-text">81 杨辉三角形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">1.2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -472,13 +493,21 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">YH</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">13k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">
-      
-    主题 – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.2
+  <div class="theme-info">主题 – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.2
   </div>
 
         
@@ -504,7 +533,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
-<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/schemes/pisces.js?v=7.4.2"></script>
+
 <script src="/js/next-boot.js?v=7.4.2"></script>
 
 
