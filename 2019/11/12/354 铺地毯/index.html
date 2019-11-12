@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="101题解">
 <meta property="og:description" content="354 铺地毯题意说明题目的意思比较简单，现有一块空地，往上面放n块地毯。而每块地毯由四个值来描述：坐标(a,b)，长g，宽k. 最后题目问我们，特定的点(x,y)上，最上层的地毯是第几块。（没有地毯输出-1） 思路分析思路1：二维数组模拟很容易想到，用一个二维数组来模拟整块空地。这块空地初始值都是-1（没有地毯），然后我们遍历输入，将第i块地毯覆盖的在二维数组上的区域，其值修改成i。这样，遍历结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-12T08:25:00.010Z">
+<meta property="og:updated_time" content="2019-11-12T08:32:21.836Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="http://yoursite.com/2019/11/12/354%20%E9%93%BA%E5%9C%B0%E6%AF%AF/">
 
@@ -232,7 +232,7 @@
                 
               
 
-              <time title="创建时间：2019-11-12 16:04:46 / 修改时间：16:25:00" itemprop="dateCreated datePublished" datetime="2019-11-12T16:04:46+08:00">2019-11-12</time>
+              <time title="创建时间：2019-11-12 16:04:46 / 修改时间：16:32:21" itemprop="dateCreated datePublished" datetime="2019-11-12T16:04:46+08:00">2019-11-12</time>
             </span>
           
             
@@ -422,7 +422,7 @@ b\leq y\leq b+k
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
 <script src="/js/schemes/muse.js?v=7.4.2"></script>
-<script src="/js/next-boot.js?v=7.4.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/next-boot.js?v=7.4.2"></script>
 
 
 
@@ -450,6 +450,58 @@ b\leq y\leq b+k
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
   
 
   
