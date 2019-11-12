@@ -6,7 +6,7 @@
 
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.0.0">
@@ -57,14 +57,14 @@
 
   <meta name="description" content="40 分离0与非0题意说明在一个数组中有两个部分：0 和 其他非零的数。题目要求将非零的部分移动到前面，0放在数组的最后。 思路分析这道题有很多思路可以实现，这里介绍相对简单的一种。 以题目的样例输入为例，[0,1,2,3,4,0]这样的数组，需要将所有的非零数放到开头。声明一个新的用于保存结果的数组，将其初始化为0，长度与原数组相同。遍历原数组，当遇到非零数，就放到新数组的对应位置。 如何寻找正">
 <meta property="og:type" content="article">
-<meta property="og:title" content="40分离0与非0">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0&#x2F;index.html">
+<meta property="og:title" content="40 分离0与非0">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;23&#x2F;40%20%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
 <meta property="og:description" content="40 分离0与非0题意说明在一个数组中有两个部分：0 和 其他非零的数。题目要求将非零的部分移动到前面，0放在数组的最后。 思路分析这道题有很多思路可以实现，这里介绍相对简单的一种。 以题目的样例输入为例，[0,1,2,3,4,0]这样的数组，需要将所有的非零数放到开头。声明一个新的用于保存结果的数组，将其初始化为0，长度与原数组相同。遍历原数组，当遇到非零数，就放到新数组的对应位置。 如何寻找正">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-27T18:31:12.355Z">
+<meta property="og:updated_time" content="2019-11-12T06:57:45.552Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/23/40%20%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">
 
 
 <script id="page-configurations">
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title>40分离0与非0 | 101题解</title>
+  <title>40 分离0与非0 | 101题解</title>
   
 
 
@@ -114,11 +114,11 @@
   <!-- 页面点击小红心 -->
   <script type="text/javascript"   src="/js/mouse_love.js"></script>
   <!-- 禁止复制 -->
-  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script>
+  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body onselectstart = "return false" itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/40%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/23/40%20%E5%88%86%E7%A6%BB0%E4%B8%8E%E9%9D%9E0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YH">
@@ -215,7 +215,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            40分离0与非0
+            40 分离0与非0
             
 
           
@@ -243,7 +243,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-28 02:31:12" itemprop="dateModified" datetime="2019-10-28T02:31:12+08:00">2019-10-28</time>
+                <time title="修改时间：2019-11-12 14:57:45" itemprop="dateModified" datetime="2019-11-12T14:57:45+08:00">2019-11-12</time>
               </span>
             
           
@@ -264,7 +264,6 @@
 <p>以题目的样例输入为例，<code>[0,1,2,3,4,0]</code>这样的数组，需要将所有的非零数放到开头。声明一个新的用于保存结果的数组，将其初始化为0，长度与原数组相同。遍历原数组，当遇到非零数，就放到新数组的<strong>对应位置</strong>。</p>
 <p><strong>如何寻找正确的对应位置？</strong>请注意代码中的变量<code>index_of_b</code>的变化过程，它表示<strong>即将填入数字的位置</strong>。声明的时候其值为0，因为我们要从第一个位置开始填。</p>
 <h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">40分离0与非0</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size;<span class="comment">//输入数组长度</span></span><br><span class="line">    <span class="keyword">int</span> a[size];<span class="comment">//声明a数组，用于保存输入</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> b[size] = &#123;&#125;;<span class="comment">//声明长度为size的数组，其初始值为0</span></span><br><span class="line">    <span class="comment">//这个b数组用于保存转换后的结果</span></span><br><span class="line">    <span class="keyword">int</span> index_of_b = <span class="number">0</span>;<span class="comment">//这个变量表示即将填入数字的位置</span></span><br><span class="line">    <span class="comment">//遍历a数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//假如a[i]不为0，则将其放入b数组对应位置</span></span><br><span class="line">            b[index_of_b] = a[i];<span class="comment">//现在index_of_b这个位置已经填入数字了</span></span><br><span class="line">            <span class="comment">//因此需要更新index_of_b</span></span><br><span class="line">            index_of_b++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//a数组遍历结束后，b已经是我们需要的结果了。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历b数组，输出结果。注意数字之间需要用空格隔开</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; b[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
     </div>
 
@@ -351,7 +350,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -415,7 +414,7 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
 <script src="/js/schemes/muse.js?v=7.4.2"></script>
-<script src="/js/next-boot.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -440,6 +439,8 @@
 
 
 
+
+  
 
   
 

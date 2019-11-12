@@ -6,7 +6,7 @@
 
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.0.0">
@@ -114,11 +114,11 @@
   <!-- 页面点击小红心 -->
   <script type="text/javascript"   src="/js/mouse_love.js"></script>
   <!-- 禁止复制 -->
-  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script>
+  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body onselectstart = "return false" itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -276,7 +276,6 @@
 </blockquote>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;s</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n; </span><br><span class="line">    <span class="keyword">int</span> arr[n][n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; arr[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//数据处理</span></span><br><span class="line">    <span class="comment">//遍历这个二维数组         </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="comment">//i &lt; n-1 说明不是最后一行，也就是“该元素下面存在其他元素”</span></span><br><span class="line">            <span class="keyword">if</span> (i &lt; n - <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//因此该元素的值可以+=下面的元素值</span></span><br><span class="line">                arr[i][j] += arr[i + <span class="number">1</span>][j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//同理，j &lt; n-1 说明不是最后一列，也就是“该元素右边存在其他元素”</span></span><br><span class="line">            <span class="keyword">if</span> (j &lt; n - <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">//因此该元素的值可以+=右边的元素值</span></span><br><span class="line">                arr[i][j] += arr[i][j + <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//处理完成</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="comment">//注意二维数组的输出方式</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt; arr[i][j] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
     </div>
 
     
@@ -301,6 +300,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/11/12/153%20%E5%9B%BE%E5%83%8F%E6%A8%A1%E7%B3%8A%E5%A4%84%E7%90%86/" rel="prev" title="153 图像模糊处理">
+                  153 图像模糊处理 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -362,7 +365,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -426,7 +429,7 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
 <script src="/js/schemes/muse.js?v=7.4.2"></script>
-<script src="/js/next-boot.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -451,6 +454,8 @@
 
 
 
+
+  
 
   
 

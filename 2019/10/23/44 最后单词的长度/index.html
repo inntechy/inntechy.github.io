@@ -6,7 +6,7 @@
 
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.0.0">
@@ -114,11 +114,11 @@
   <!-- 页面点击小红心 -->
   <script type="text/javascript"   src="/js/mouse_love.js"></script>
   <!-- 禁止复制 -->
-  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script>
+  <script> document.body.onselectstart=document.body.oncontextmenu=function(){return false;};</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body onselectstart = "return false" itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,9 +258,6 @@
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>下面给出方法二的代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//输入部分</span></span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">    getline(<span class="built_in">cin</span>, str);<span class="comment">//注意，只有这样才能输入带空格字符串</span></span><br><span class="line">    <span class="comment">//输入部分结束</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;<span class="comment">//count用于记录遍历经过了几个字母</span></span><br><span class="line">    <span class="comment">//倒序遍历字符串，请注意循环三要素的内容</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = str.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="comment">//判断到空格，就break当前循环。注意判断空格的方法</span></span><br><span class="line">        <span class="keyword">if</span>(str[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//输出结果</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; count;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
     </div>
 
     
@@ -276,8 +273,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/23/302%E7%8C%9C%E6%8B%B3/" rel="next" title="302猜拳">
-                  <i class="fa fa-chevron-left"></i> 302猜拳
+                <a href="/2019/10/23/302%20%E7%8C%9C%E6%8B%B3/" rel="next" title="302 猜拳">
+                  <i class="fa fa-chevron-left"></i> 302 猜拳
                 </a>
               
             </div>
@@ -350,7 +347,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -414,7 +411,7 @@
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.2"></script><script src="/js/motion.js?v=7.4.2"></script>
 <script src="/js/schemes/muse.js?v=7.4.2"></script>
-<script src="/js/next-boot.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -439,6 +436,8 @@
 
 
 
+
+  
 
   
 
