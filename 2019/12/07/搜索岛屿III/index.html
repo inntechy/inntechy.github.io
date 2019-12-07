@@ -55,17 +55,17 @@
   };
 </script>
 
-  <meta name="description" content="C++中，函数的基本结构如下1234int add (int x)&amp;#123;    int x = x+1;    return x;&amp;#125;上面这个例子中，函数接收一个整数类型的参数，然后返回了这个参数+1之后的值。">
-<meta name="keywords" content="函数">
+  <meta name="description" content="题意说明输入一个由整数 1（陆地）和 0（水）组成的的二维数组，计算岛屿的数量。所有连着的1视为同一个岛屿（上下左右四个方向相连），输出岛屿的数量。思路分析这道题是教材上面的原题，思路就是先找一个‘1’，然后从这个1所在的位置进行DFS或者BFS，将其上下左右相邻的‘1’全部找到，并改为‘0’，同时计数一次，最后输出计数的次数就可以知道岛屿的数量了。">
+<meta name="keywords" content="搜索,L4期末考试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="参数的传递">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92&#x2F;index.html">
+<meta property="og:title" content="搜索岛屿III">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;07&#x2F;%E6%90%9C%E7%B4%A2%E5%B2%9B%E5%B1%BFIII&#x2F;index.html">
 <meta property="og:site_name" content="101题解">
-<meta property="og:description" content="C++中，函数的基本结构如下1234int add (int x)&amp;#123;    int x = x+1;    return x;&amp;#125;上面这个例子中，函数接收一个整数类型的参数，然后返回了这个参数+1之后的值。">
+<meta property="og:description" content="题意说明输入一个由整数 1（陆地）和 0（水）组成的的二维数组，计算岛屿的数量。所有连着的1视为同一个岛屿（上下左右四个方向相连），输出岛屿的数量。思路分析这道题是教材上面的原题，思路就是先找一个‘1’，然后从这个1所在的位置进行DFS或者BFS，将其上下左右相邻的‘1’全部找到，并改为‘0’，同时计数一次，最后输出计数的次数就可以知道岛屿的数量了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-15T16:56:34.861Z">
+<meta property="og:updated_time" content="2019-12-07T15:56:36.997Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/2019/11/16/%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/07/%E6%90%9C%E7%B4%A2%E5%B2%9B%E5%B1%BFIII/">
 
 
 <script id="page-configurations">
@@ -79,7 +79,7 @@
   };
 </script>
 
-  <title>参数的传递 | 101题解</title>
+  <title>搜索岛屿III | 101题解</title>
   
 
 
@@ -228,7 +228,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/16/%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/07/%E6%90%9C%E7%B4%A2%E5%B2%9B%E5%B1%BFIII/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YH">
@@ -242,7 +242,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            参数的传递
+            搜索岛屿III
             
 
           
@@ -259,7 +259,7 @@
                 
               
 
-              <time title="创建时间：2019-11-16 00:53:23 / 修改时间：00:56:34" itemprop="dateCreated datePublished" datetime="2019-11-16T00:53:23+08:00">2019-11-16</time>
+              <time title="创建时间：2019-12-07 23:52:00 / 修改时间：23:56:36" itemprop="dateCreated datePublished" datetime="2019-12-07T23:52:00+08:00">2019-12-07</time>
             </span>
           
             
@@ -273,8 +273,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" itemprop="url" rel="index">
-                    <span itemprop="name">专题讲解</span>
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
 
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.1k</span>
+              <span>898</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -303,7 +303,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>11 分钟</span>
+              <span>9 分钟</span>
             </span>
           
 
@@ -316,36 +316,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>C++中，函数的基本结构如下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = x+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面这个例子中，函数接收一个整数类型的参数，然后返回了这个参数+1之后的值。</p><a id="more"></a>
+        <h2 id="题意说明"><a href="#题意说明" class="headerlink" title="题意说明"></a>题意说明</h2><p>输入一个由整数 1（陆地）和 0（水）组成的的二维数组，计算岛屿的数量。<br>所有连着的1视为同一个岛屿（上下左右四个方向相连），输出岛屿的数量。</p><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>这道题是教材上面的原题，思路就是先找一个‘1’，然后从这个1所在的位置进行DFS或者BFS，将其上下左右相邻的‘1’全部找到，并改为‘0’，同时计数一次，最后输出计数的次数就可以知道岛屿的数量了。</p><a id="more"></a>
 
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span> b = add(a);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">' '</span> &lt;&lt; b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果像上面这样在主函数中调用<code>add</code>函数，将参数a传入到函数里，用b储存函数返回的结果。那么这个<code>cout</code>语句应该如下输出</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>也就是说，a的值还是3，b的值变成了4。</p>
-<p>我们可以看到，在<code>add</code>函数中，虽然<code>int x = x+1</code>，但<strong>主调函数</strong>中的a的值并没有变化。</p>
-<h2 id="传值"><a href="#传值" class="headerlink" title="传值"></a>传值</h2><p>C++默认的传参方式就是<strong>直接传值</strong>。</p>
-<p>这种方式下，在上面的程序中，a这个变量并没有真正进入<code>add</code>函数，而是将a的值复制到了x中。x是<code>add</code>的一个局部变量，它的值的变化并不会影响到<strong>主调函数</strong>中的a。这种情况可以看作是在函数之前，先执行了<code>int x = a;</code>再调用<code>add(x)</code>。</p>
-<p>那么，如果我们希望在函数中修改<strong>主调函数</strong>中的参数值，要怎么做呢？下面介绍另一种传递参数的方式。</p>
-<h2 id="传引用"><a href="#传引用" class="headerlink" title="传引用"></a>传引用</h2><p>如果希望以传引用的方式传递某个参数，函数需要这样实现：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意，参数的名字前面多了个&amp;符号，我们称之为“取址符”</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> &amp; x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = x+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们依然使用上面的主调函数进行调用：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">int</span> b = add(a);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">' '</span> &lt;&lt; b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这次函数的输出变成了</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>通俗地说：传引用这种方式下，实际上是将变量直接“放入”函数中执行。以上述代码为例，在<code>int b = add(a)</code>这句中，对函数add进行了调用，调用的过程是这样：</p>
-<ol>
-<li>把x当作a的“外号”，对x做的一切都相当于对a做的</li>
-<li>令x+1，实际上就是a+1（在这里，a的值已经变成了4）</li>
-<li>返回了x的值，实际就是返回a的值（返回不重要，实际上不返回a的值也已经改变了）</li>
-</ol>
-<p>既然返回就是a的值，我们还可以把函数改写一下，将返回给去掉：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> &amp; x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = x+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样，<code>main()</code>函数就可以写成这样：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mian</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">    add(a);<span class="comment">//直接调用</span></span><br><span class="line">    <span class="keyword">int</span> b = a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">' '</span> &lt;&lt; b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这段代码的效果跟上面是完全一样的，同样会输出</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="keyword">int</span> nxt[<span class="number">4</span>][<span class="number">2</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">int</span> count= <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> dfs(<span class="keyword">int</span> x,<span class="keyword">int</span> y)&#123;<span class="comment">//DFS的模板套用就好了</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> tx,ty;</span><br><span class="line">		tx = x + nxt[i][<span class="number">0</span>];</span><br><span class="line">		ty = y + nxt[i][<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(a[tx][ty] == <span class="number">1</span>)&#123;</span><br><span class="line">			a[tx][ty] = <span class="number">0</span>;</span><br><span class="line">			dfs(tx,ty);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;<span class="comment">//输入二维数组</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i][j] == <span class="number">1</span>)&#123;<span class="comment">//找到一个1</span></span><br><span class="line">			    count++;<span class="comment">//计数一次</span></span><br><span class="line">			    a[i][j] = <span class="number">0</span>;</span><br><span class="line">				dfs(i,j);<span class="comment">//从这个位置开始DFS</span></span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; count; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -360,7 +333,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/%E5%87%BD%E6%95%B0/" rel="tag"># 函数</a>
+              <a href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag"># 搜索</a>
+            
+              <a href="/tags/L4%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95/" rel="tag"># L4期末考试</a>
             
           </div>
         
@@ -370,8 +345,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/11/12/354%20%E9%93%BA%E5%9C%B0%E6%AF%AF/" rel="next" title="354 铺地毯">
-                  <i class="fa fa-chevron-left"></i> 354 铺地毯
+                <a href="/2019/12/07/373%20%E9%80%81%E5%A4%96%E5%8D%96/" rel="next" title="373 送外卖">
+                  <i class="fa fa-chevron-left"></i> 373 送外卖
                 </a>
               
             </div>
@@ -380,8 +355,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/11/16/2019-CSP-J2%E7%9C%9F%E9%A2%98/" rel="prev" title="2019-CSP-J2真题">
-                  2019-CSP-J2真题 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/12/07/%E8%9A%82%E8%9A%81%E8%B5%B0%E8%BF%B7%E5%AE%AB/" rel="prev" title="蚂蚁走迷宫">
+                  蚂蚁走迷宫 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -428,7 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#传值"><span class="nav-number">1.</span> <span class="nav-text">传值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#传引用"><span class="nav-number">2.</span> <span class="nav-text">传引用</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意说明"><span class="nav-number">1.</span> <span class="nav-text">题意说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路分析"><span class="nav-number">2.</span> <span class="nav-text">思路分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
